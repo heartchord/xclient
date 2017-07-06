@@ -10,12 +10,12 @@ public class LoadSceneTest : MonoBehaviour {
     }
 
     void LoadScene(){
-        regions = new GameObject[14, 14];
+        regions = new GameObject[42, 37];
 
-        for (int i = 0; i < 14; i++) {
-            for (int j = 0; j < 14; j++) {
+        for (int i = 0; i < 42; i++) {
+            for (int j = 0; j < 37; j++) {
                 regions[i, j] = new GameObject();
-                string url = "scene/scene_10322/" + i + "_" + j;
+                string url = "scene/scene_10002/" + i + "_" + j;
                 Texture2D bg = Resources.Load(url) as Texture2D;
                 Rect rt = new Rect(0, 0, bg.width, bg.height);
                 Sprite st = Sprite.Create(bg, rt, new Vector2(0f, 0f));
@@ -25,7 +25,7 @@ public class LoadSceneTest : MonoBehaviour {
                 sr.sortingOrder = 1;
 
                 float x = 3.2f * i;
-                float y = 1.8f * (13 - j);
+                float y = 1.8f * (36 - j);
                 regions[i, j].transform.position = new Vector3(x, y, 0);
                 regions[i, j].gameObject.name = url;
             }
@@ -33,7 +33,7 @@ public class LoadSceneTest : MonoBehaviour {
     }
 
     void DrawGrids() {
-        for (int i = 0; i < 14; i++) {
+        for (int i = 0; i < 43; i++) {
             Vector3 from = new Vector3(0,0,0);
             Vector3 to   = new Vector3(0,0,0);
             Gizmos.color = new Color(0.3f, 0.7f, 0.5f, 0.5f);
@@ -41,11 +41,11 @@ public class LoadSceneTest : MonoBehaviour {
             from.x = 3.2f * i;
 
             to.x = 3.2f * i;
-            to.y = 1.8f * 14;
+            to.y = 1.8f * 37;
             Gizmos.DrawLine(from, to);
         }
 
-        for (int i = 0; i < 14; i++)
+        for (int i = 0; i < 38; i++)
         {
             Vector3 from = new Vector3(0, 0, 0);
             Vector3 to = new Vector3(0, 0, 0);
@@ -53,7 +53,7 @@ public class LoadSceneTest : MonoBehaviour {
 
             from.y = 1.8f * i;
 
-            to.x = 3.2f * 14;
+            to.x = 3.2f * 42;
             to.y = 1.8f * i;
             Gizmos.DrawLine(from, to);
         }
