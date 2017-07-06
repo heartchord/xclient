@@ -59,13 +59,37 @@ public class LoadSceneTest : MonoBehaviour {
         }
     }
 
-	
-	// Update is called once per frame
-	void Update () {
+    void _DrawGrids()
+    {
+        Vector3 from = new Vector3(19.04f, 8.10f, 0);
+        Vector3 to = new Vector3(22.308f, 9.74f, 0);
+        Gizmos.color = new Color(1.0f, 0, 0, 0.5f);
+        Gizmos.DrawLine(from, to);
+
+        from = new Vector3(35.125f, 0.046f, 0);
+        to = new Vector3(0.01f, 17.52f, 0);
+        Gizmos.color = new Color(1.0f, 0, 0, 0.5f);
+        Gizmos.DrawLine(from, to);
+
+        from = new Vector3(19.436f, 7.876f, 0);
+        to = new Vector3(22.64f, 9.46f, 0);
+        Gizmos.color = new Color(1.0f, 0, 0, 0.5f);
+        Gizmos.DrawLine(from, to);
+
+        from = new Vector3(19.493f, 8.35f, 0);
+        to = new Vector3(19.89f, 8.12f, 0);
+        Gizmos.color = new Color(1.0f, 0, 0, 0.5f);
+        Gizmos.DrawLine(from, to);
+    }
+
+
+    // Update is called once per frame
+    void Update () {
     }
 
     void OnDrawGizmos()
     {
         DrawGrids();
+        _DrawGrids();
     }
 }
